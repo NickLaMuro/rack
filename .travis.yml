@@ -24,10 +24,6 @@ rvm:
   - jruby-9.0.4.0
   - jruby-head
 
-notifications:
-  email: false
-  irc: "irc.freenode.org#rack"
-
 matrix:
   allow_failures:
     - rvm: rbx-2
