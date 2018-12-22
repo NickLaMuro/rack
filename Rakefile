@@ -95,7 +95,10 @@ desc "Run all the fast + platform agnostic tests"
 task test: %w[spec test:regular]
 
 desc "Run all the tests we run on CI"
-task ci: :test
+task :ci do
+  ENV["TESTOPTS"] = "--with-debugging"
+  Rake::Task[:test].invoke
+end
 
 task gem: :spec do
   sh "gem build rack.gemspec"
